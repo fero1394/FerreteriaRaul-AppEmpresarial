@@ -40,4 +40,9 @@ public class ControladorCliente {
     private Flux<Cliente> findAllByNombre(@PathVariable("nombre")String nombre){
         return iServicioCliente.buscarPorNombre(nombre);
     }
+
+    @PutMapping("/modificar")
+    public Mono<Cliente> update(@RequestBody Cliente cliente){
+        return iServicioCliente.modificar(cliente);
+    }
 }
