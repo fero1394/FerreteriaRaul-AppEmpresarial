@@ -11,6 +11,8 @@ public interface IServicioInventario {
 
     Flux<Inventario> mostrarTodos();
 
+    Mono<Inventario> borrar(String id);
+
 
 
 }

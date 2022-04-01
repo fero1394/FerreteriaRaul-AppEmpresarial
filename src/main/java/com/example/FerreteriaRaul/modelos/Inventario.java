@@ -19,7 +19,7 @@ public class Inventario {
 
     private Integer cantidad;
 
-    //@DBRef
+    @DBRef
     private Proveedor proveedor;
 
     public Inventario(String idProducto, String producto, Integer cantidad, Proveedor proveedor) {

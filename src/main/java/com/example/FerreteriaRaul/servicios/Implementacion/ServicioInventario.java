@@ -16,8 +16,6 @@ public class ServicioInventario implements IServicioInventario {
     @Autowired
     private IinventarioRepositorio repositorioInventario;
 
-    private InventarioMapper mapper;
-
 
     @Override
     public Mono<Inventario> crearInventario(Inventario inventario) {
@@ -28,4 +26,12 @@ public class ServicioInventario implements IServicioInventario {
     public Flux<Inventario> mostrarTodos() {
         return repositorioInventario.findAll();
     }
+
+    @Override
+    public Mono<Inventario> borrar(String id) {
+        return repositorioInventario
+                .findById(id)
+                .flatMap(p -> repositorioInventario.deleteById(p.getIdProducto()).thenReturn(p));
+    }
+
 }

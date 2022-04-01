@@ -29,5 +29,12 @@ public class ControladorInventario {
         return iservicioInventario.mostrarTodos();
     }
 
+    @DeleteMapping("/borrar/{id}")
+    private Mono<ResponseEntity<Inventario>> delete(@PathVariable("id") String id){
+        Inventario inventario = new Inventario();
+        return iservicioInventario.borrar(id)
+                .flatMap(p -> Mono.just(ResponseEntity.ok(inventario)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
+    }
 
 }

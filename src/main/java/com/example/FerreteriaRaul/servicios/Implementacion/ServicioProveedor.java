@@ -24,4 +24,12 @@ public class ServicioProveedor implements IServicioProveedor {
     public Flux<Proveedor> mostrarTodos() {
         return this.repositorioProveedor.findAll();
     }
+
+    @Override
+    public Mono<Proveedor> borrar(String id) {
+        return repositorioProveedor
+                .findById(id)
+                .flatMap(p -> repositorioProveedor.deleteById(p.getIdProveedor()).thenReturn(p));
+    }
+
 }

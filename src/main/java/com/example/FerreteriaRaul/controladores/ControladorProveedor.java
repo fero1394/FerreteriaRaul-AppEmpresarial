@@ -2,6 +2,7 @@ package com.example.FerreteriaRaul.controladores;
 
 import com.example.FerreteriaRaul.dtos.InventarioDTO;
 import com.example.FerreteriaRaul.dtos.ProveedorDTO;
+import com.example.FerreteriaRaul.modelos.Inventario;
 import com.example.FerreteriaRaul.modelos.Proveedor;
 import com.example.FerreteriaRaul.servicios.IServicioInventario;
 import com.example.FerreteriaRaul.servicios.IServicioProveedor;
@@ -28,5 +29,14 @@ public class ControladorProveedor {
     @GetMapping("")
     private Flux<Proveedor> mostrarTodos(){
         return iServicioProveedor.mostrarTodos();
+    }
+
+
+    @DeleteMapping("/borrar/{id}")
+    private Mono<ResponseEntity<Proveedor>> delete(@PathVariable("id") String id){
+        Proveedor proveedor = new Proveedor();
+        return iServicioProveedor.borrar(id)
+                .flatMap(p -> Mono.just(ResponseEntity.ok(proveedor)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 }

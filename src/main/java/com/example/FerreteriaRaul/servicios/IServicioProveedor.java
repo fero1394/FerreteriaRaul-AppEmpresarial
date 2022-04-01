@@ -11,4 +11,6 @@ public interface IServicioProveedor {
     Mono<Proveedor> crearProveedor(Proveedor proveedor);
 
     Flux<Proveedor> mostrarTodos();
+
+    Mono<Proveedor> borrar(String id);
 }
