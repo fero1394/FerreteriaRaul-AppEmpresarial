@@ -41,4 +41,9 @@ public class ControladorInventario {
     private Flux<Inventario> findAllByproducto(@PathVariable("producto")String producto){
         return iservicioInventario.buscarPorProducto(producto);
     }
+
+    @PutMapping("/modificar")
+    public Mono<Inventario> update(@RequestBody Inventario inventario){
+        return iservicioInventario.modificar(inventario);
+    }
 }

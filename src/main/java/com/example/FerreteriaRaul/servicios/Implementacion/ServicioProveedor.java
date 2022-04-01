@@ -38,5 +38,10 @@ public class ServicioProveedor implements IServicioProveedor {
         return repositorioProveedor.findAllByNombre(nombre);
     }
 
+    @Override
+    public Mono<Proveedor> modificar(Proveedor proveedor) {
+        return repositorioProveedor.save(proveedor);
+    }
+
 
 }

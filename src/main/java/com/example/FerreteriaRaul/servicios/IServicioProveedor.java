@@ -15,4 +15,6 @@ public interface IServicioProveedor {
     Mono<Proveedor> borrar(String id);
 
     Flux<Proveedor> buscarPorNombre(String nombre);
+
+    Mono<Proveedor> modificar(Proveedor proveedor);
 }

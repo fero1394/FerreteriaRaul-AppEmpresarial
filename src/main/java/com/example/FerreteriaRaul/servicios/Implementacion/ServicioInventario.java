@@ -3,6 +3,7 @@ package com.example.FerreteriaRaul.servicios.Implementacion;
 import com.example.FerreteriaRaul.dtos.InventarioDTO;
 import com.example.FerreteriaRaul.mappers.InventarioMapper;
 import com.example.FerreteriaRaul.modelos.Inventario;
+import com.example.FerreteriaRaul.modelos.Proveedor;
 import com.example.FerreteriaRaul.repositorios.IinventarioRepositorio;
 import com.example.FerreteriaRaul.servicios.IServicioInventario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,11 @@ public class ServicioInventario implements IServicioInventario {
     @Override
     public Flux<Inventario> buscarPorProducto(String producto) {
         return repositorioInventario.findAllByProducto(producto);
+    }
+
+    @Override
+    public Mono<Inventario> modificar(Inventario inventario) {
+        return repositorioInventario.save(inventario);
     }
 
 
