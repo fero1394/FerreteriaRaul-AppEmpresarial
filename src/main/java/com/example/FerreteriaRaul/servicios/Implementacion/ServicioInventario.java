@@ -1,9 +1,6 @@
 package com.example.FerreteriaRaul.servicios.Implementacion;
 
-import com.example.FerreteriaRaul.dtos.InventarioDTO;
-import com.example.FerreteriaRaul.mappers.InventarioMapper;
 import com.example.FerreteriaRaul.modelos.Inventario;
-import com.example.FerreteriaRaul.modelos.Proveedor;
 import com.example.FerreteriaRaul.repositorios.IinventarioRepositorio;
 import com.example.FerreteriaRaul.servicios.IServicioInventario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +29,7 @@ public class ServicioInventario implements IServicioInventario {
     public Mono<Inventario> borrar(String id) {
         return repositorioInventario
                 .findById(id)
-                .flatMap(p -> repositorioInventario.deleteById(p.getIdProducto()).thenReturn(p));
+                .flatMap(p -> repositorioInventario.deleteById(p.getIdInventario()).thenReturn(p));
     }
 
     @Override

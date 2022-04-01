@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Inventario {
 
     @Id
-    private String idProducto;
+    private String idInventario;
    // private String idProducto = UUID.randomUUID().toString().substring(0,100);
 
     @DBRef
@@ -20,8 +20,8 @@ public class Inventario {
     @DBRef
     private Proveedor proveedor;
 
-    public Inventario(String idProducto, Producto producto, Integer cantidad, Proveedor proveedor) {
-        this.idProducto = idProducto;
+    public Inventario(String idInventario, Producto producto, Integer cantidad, Proveedor proveedor) {
+        this.idInventario = idInventario;
         this.producto = producto;
         this.cantidad = cantidad;
         this.proveedor = proveedor;
@@ -29,12 +29,12 @@ public class Inventario {
 
     public Inventario(){}
 
-    public String getIdProducto() {
-        return idProducto;
+    public String getIdInventario() {
+        return idInventario;
     }
 
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
+    public void setIdInventario(String idInventario) {
+        this.idInventario = idInventario;
     }
 
     public Producto getProducto() {
@@ -64,7 +64,7 @@ public class Inventario {
     @Override
     public String toString() {
         return "Cliente{" +
-                "idProducto='" + idProducto + '\'' +
+                "idProducto='" + idInventario + '\'' +
                 ", producto='" + producto + '\'' +
                 ", cantidad=" + cantidad +
                 ", proveedor=" + proveedor +

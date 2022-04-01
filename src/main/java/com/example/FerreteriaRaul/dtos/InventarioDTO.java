@@ -4,14 +4,11 @@ import com.example.FerreteriaRaul.modelos.Inventario;
 import com.example.FerreteriaRaul.modelos.Producto;
 import com.example.FerreteriaRaul.modelos.Proveedor;
 
-import java.util.List;
-import java.util.UUID;
-
 public class InventarioDTO {
 
     private Inventario inventario = new Inventario();
 
-    private String idProducto = inventario.getIdProducto();     //UUID.randomUUID().toString().substring(0,100);
+    private String idProducto = inventario.getIdInventario();     //UUID.randomUUID().toString().substring(0,100);
 
     private Producto producto = inventario.getProducto();
 

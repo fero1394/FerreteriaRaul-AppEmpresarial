@@ -2,8 +2,6 @@ package com.example.FerreteriaRaul.mappers;
 
 import com.example.FerreteriaRaul.dtos.InventarioDTO;
 import com.example.FerreteriaRaul.modelos.Inventario;
-import reactor.core.CoreSubscriber;
-import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +11,7 @@ public class InventarioMapper {
 
     public Inventario fromDTO(InventarioDTO dto){
         Inventario inventario = new Inventario();
-        inventario.setIdProducto(dto.getIdProducto());
+        inventario.setIdInventario(dto.getIdProducto());
         inventario.setProducto(dto.getProducto());
         inventario.setCantidad(dto.getCantidad());
         inventario.setProveedor(dto.getProveedor());
@@ -23,7 +21,7 @@ public class InventarioMapper {
 
     public InventarioDTO fromInventario(Inventario inventario){
         InventarioDTO inventarioDTO = new InventarioDTO();
-        inventarioDTO.setIdProducto(inventario.getIdProducto());
+        inventarioDTO.setIdProducto(inventario.getIdInventario());
         inventarioDTO.setProducto(inventario.getProducto());
         inventarioDTO.setCantidad(inventario.getCantidad());
         inventarioDTO.setProveedor(inventario.getProveedor());
