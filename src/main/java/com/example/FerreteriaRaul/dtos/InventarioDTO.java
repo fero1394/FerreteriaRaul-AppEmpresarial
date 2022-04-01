@@ -7,20 +7,22 @@ import java.util.List;
 import java.util.UUID;
 
 public class InventarioDTO {
-    private String idProducto = UUID.randomUUID().toString().substring(0,100);
 
-    private String producto;
+    private Inventario inventario = new Inventario();
 
-    private Integer cantidad;
+    private String idProducto = inventario.getIdProducto();     //UUID.randomUUID().toString().substring(0,100);
 
-    private Proveedor proveedor;
+    private String producto = inventario.getProducto();
+
+    private Integer cantidad = inventario.getCantidad();
+
+    private Proveedor proveedor = inventario.getProveedor();
 
     public Proveedor getProveedor() {
         return proveedor;
     }
 
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
+    public void setProveedor(Proveedor proveedor) {this.proveedor = proveedor;
     }
 
     public String getIdProducto() {

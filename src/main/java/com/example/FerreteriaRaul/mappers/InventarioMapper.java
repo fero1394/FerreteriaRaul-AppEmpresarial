@@ -2,6 +2,8 @@ package com.example.FerreteriaRaul.mappers;
 
 import com.example.FerreteriaRaul.dtos.InventarioDTO;
 import com.example.FerreteriaRaul.modelos.Inventario;
+import reactor.core.CoreSubscriber;
+import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 import java.util.Iterator;
