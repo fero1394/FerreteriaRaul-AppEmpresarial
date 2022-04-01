@@ -9,7 +9,7 @@ import java.util.UUID;
 public class Cliente {
 
     @Id
-    private String idCliente = UUID.randomUUID().toString().substring(0,100);
+    private String idCliente;// UUID.randomUUID().toString().substring(0,100);
 
     private String nombre;
 

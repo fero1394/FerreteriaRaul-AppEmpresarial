@@ -12,14 +12,15 @@ public class Inventario {
     private String idProducto;
    // private String idProducto = UUID.randomUUID().toString().substring(0,100);
 
-    private String producto;
+    @DBRef
+    private Producto producto;
 
     private Integer cantidad;
 
     @DBRef
     private Proveedor proveedor;
 
-    public Inventario(String idProducto, String producto, Integer cantidad, Proveedor proveedor) {
+    public Inventario(String idProducto, Producto producto, Integer cantidad, Proveedor proveedor) {
         this.idProducto = idProducto;
         this.producto = producto;
         this.cantidad = cantidad;
@@ -36,11 +37,11 @@ public class Inventario {
         this.idProducto = idProducto;
     }
 
-    public String getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 
-    public void setProducto(String producto) {
+    public void setProducto(Producto producto) {
         this.producto = producto;
     }
 

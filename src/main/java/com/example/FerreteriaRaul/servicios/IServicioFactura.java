@@ -11,9 +11,9 @@ public interface IServicioFactura {
 
     Flux<Factura> mostrarTodos();
 
-    Mono<Factura> borrar(String id);
+    Mono<Factura> borrar(Integer id);
 
-    Flux<Factura> buscarPorNombre(String factura);
+    Mono<Factura> buscarPorIdFactura(Integer idfactura);
 
     Mono<Factura> modificar(Factura factura);
 
