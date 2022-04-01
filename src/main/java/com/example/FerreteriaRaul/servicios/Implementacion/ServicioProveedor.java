@@ -1,6 +1,7 @@
 package com.example.FerreteriaRaul.servicios.Implementacion;
 
 
+import com.example.FerreteriaRaul.modelos.Inventario;
 import com.example.FerreteriaRaul.modelos.Proveedor;
 import com.example.FerreteriaRaul.repositorios.IProveedorRepositorio;
 import com.example.FerreteriaRaul.servicios.IServicioProveedor;
@@ -31,5 +32,11 @@ public class ServicioProveedor implements IServicioProveedor {
                 .findById(id)
                 .flatMap(p -> repositorioProveedor.deleteById(p.getIdProveedor()).thenReturn(p));
     }
+
+    @Override
+    public Flux<Proveedor> buscarPorNombre(String nombre) {
+        return repositorioProveedor.findAllByNombre(nombre);
+    }
+
 
 }

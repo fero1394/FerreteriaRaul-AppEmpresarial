@@ -39,4 +39,9 @@ public class ControladorProveedor {
                 .flatMap(p -> Mono.just(ResponseEntity.ok(proveedor)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
+
+    @GetMapping("/buscarpornombre/{nombre}")
+    private Flux<Proveedor> findAllBynombre(@PathVariable("nombre")String nombre){
+        return iServicioProveedor.buscarPorNombre(nombre);
+    }
 }

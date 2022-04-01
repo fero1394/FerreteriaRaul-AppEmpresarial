@@ -13,6 +13,8 @@ public interface IServicioInventario {
 
     Mono<Inventario> borrar(String id);
 
+    Flux<Inventario> buscarPorProducto(String producto);
+
 
 
 }

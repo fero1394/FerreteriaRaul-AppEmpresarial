@@ -34,4 +34,10 @@ public class ServicioInventario implements IServicioInventario {
                 .flatMap(p -> repositorioInventario.deleteById(p.getIdProducto()).thenReturn(p));
     }
 
+    @Override
+    public Flux<Inventario> buscarPorProducto(String producto) {
+        return repositorioInventario.findAllByProducto(producto);
+    }
+
+
 }

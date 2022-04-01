@@ -13,4 +13,6 @@ public interface IServicioProveedor {
     Flux<Proveedor> mostrarTodos();
 
     Mono<Proveedor> borrar(String id);
+
+    Flux<Proveedor> buscarPorNombre(String nombre);
 }

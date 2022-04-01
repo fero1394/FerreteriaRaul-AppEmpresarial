@@ -37,4 +37,8 @@ public class ControladorInventario {
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
+    @GetMapping("/buscarporproducto/{producto}")
+    private Flux<Inventario> findAllByproducto(@PathVariable("producto")String producto){
+        return iservicioInventario.buscarPorProducto(producto);
+    }
 }
