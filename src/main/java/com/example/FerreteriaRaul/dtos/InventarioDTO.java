@@ -1,5 +1,6 @@
 package com.example.FerreteriaRaul.dtos;
 
+import com.example.FerreteriaRaul.modelos.Inventario;
 import com.example.FerreteriaRaul.modelos.Proveedor;
 
 import java.util.List;

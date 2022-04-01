@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface IServicioInventario {
-    InventarioDTO crearInventario(InventarioDTO inventarioDTO);
+    Mono<Inventario> crearInventario(Inventario inventario);
 
     Flux<Inventario> mostrarTodos();
 

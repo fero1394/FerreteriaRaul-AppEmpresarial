@@ -20,8 +20,8 @@ public class ControladorInventario {
 
     @PostMapping("/crear")
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<InventarioDTO> create(@RequestBody InventarioDTO inventarioDTO){
-        return iservicioInventario.crearInventario(inventarioDTO);
+    public Mono<Inventario> create(@RequestBody Inventario inventario){
+        return iservicioInventario.crearInventario(inventario);
     }
 
     @GetMapping("")
