@@ -1,6 +1,7 @@
 package com.example.FerreteriaRaul.dtos;
 
 import com.example.FerreteriaRaul.modelos.Inventario;
+import com.example.FerreteriaRaul.modelos.Producto;
 import com.example.FerreteriaRaul.modelos.Proveedor;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class InventarioDTO {
 
     private String idProducto = inventario.getIdProducto();     //UUID.randomUUID().toString().substring(0,100);
 
-    private String producto = inventario.getProducto();
+    private Producto producto = inventario.getProducto();
 
     private Integer cantidad = inventario.getCantidad();
 
@@ -33,11 +34,11 @@ public class InventarioDTO {
         this.idProducto = idProducto;
     }
 
-    public String getProducto() {
+    public Producto getProducto() {
         return producto;
     }
 
-    public void setProducto(String producto) {
+    public void setProducto(Producto producto) {
         this.producto = producto;
     }
 
