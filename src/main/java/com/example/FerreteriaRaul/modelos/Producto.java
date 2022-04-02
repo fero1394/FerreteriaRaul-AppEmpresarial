@@ -3,7 +3,7 @@ package com.example.FerreteriaRaul.modelos;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document("productos")
 public class Producto {
 
     @Id
@@ -11,9 +11,17 @@ public class Producto {
 
     private String nombreProducto;
 
-    private int cantidad;
-
     private int precio;
+
+    public Producto() {
+
+    }
+
+    public Producto(String idProducto, String nombreProducto, int precio) {
+        this.idProducto = idProducto;
+        this.nombreProducto = nombreProducto;
+        this.precio = precio;
+    }
 
     public String getIdProducto() {
         return idProducto;
@@ -29,14 +37,6 @@ public class Producto {
 
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
     public int getPrecio() {

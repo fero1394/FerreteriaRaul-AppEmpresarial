@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Document("facturas")
@@ -15,11 +16,11 @@ public class Factura {
     @DBRef
     private Cliente cliente;
 
-    private String fecha;
+    private LocalDate fecha;
 
     private String asesor;
 
-    private List<Inventario> listaProductos;
+    private List<Producto> listaProductos;
 
     private int totalaPagar;
 
@@ -28,6 +29,15 @@ public class Factura {
     public Factura() {
         idFactura = IdSiguiente;
         IdSiguiente++;
+        this.fecha = LocalDate.now();
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public int getIdFactura() {
@@ -38,14 +48,6 @@ public class Factura {
         this.idFactura = idFactura;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
     public String getAsesor() {
         return asesor;
     }
@@ -54,11 +56,11 @@ public class Factura {
         this.asesor = asesor;
     }
 
-    public List<Inventario> getListaProductos() {
+    public List<Producto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(List<Inventario> listaProductos) {
+    public void setListaProductos(List<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
