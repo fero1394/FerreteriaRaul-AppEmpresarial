@@ -35,34 +35,18 @@ public class ServicioFactura implements IServicioFactura {
             @Override
             public boolean test(Inventario t) {
 
-                return t.getProducto().getNombreProducto().equals(salidaProducto);
+                return t.getProducto().getNombreProducto().equals(salidaProducto.getNombreProducto());
             }
         };
 
-        salidaProducto.getListaProductos().stream().   subscribe(p -> log.info(toString()));
-
-        repositorioInventario.findAll()
-                .filter(p -> p.)
-
-
-
-
-        /*
         repositorioInventario.findAll()
                 .filter(predicado)
                 .flatMap(p ->
                 {
-                    p.setCantidad(p.getCantidad() + salidaProducto.getCantidadProducto());
+                    p.setCantidad(p.getCantidad() - salidaProducto.getCantidadProducto());
                     return repositorioInventario.save(p);
                 }).
                 subscribe();
-
-         */
-
-
-
-
-
 
         return ifacturaRepositorio.save(factura);
     }

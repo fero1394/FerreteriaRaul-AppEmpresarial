@@ -23,9 +23,13 @@ public class Factura {
 
     //private List<String> listaProductos;
 
+    private Integer cantidadProducto;
+
     private String nombreProducto;
 
-    private int totalaPagar;
+    private Integer precio;
+
+    private Integer totalaPagar;
 
     private static Integer IdSiguiente = 1;
 
@@ -75,12 +79,28 @@ public class Factura {
         this.totalaPagar = totalaPagar;
     }
 
-    public List<String> getListaProductos() {
-        return listaProductos;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setListaProductos(List<String> listaProductos) {
-        this.listaProductos = listaProductos;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    public Integer getCantidadProducto() {
+        return cantidadProducto;
+    }
+
+    public void setCantidadProducto(Integer cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
+    }
+
+    public Integer getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Integer precio) {
+        this.precio = precio;
     }
 
     @Override
@@ -88,12 +108,12 @@ public class Factura {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Factura factura = (Factura) o;
-        return totalaPagar == factura.totalaPagar && Objects.equals(idFactura, factura.idFactura) && Objects.equals(cliente, factura.cliente) && Objects.equals(fecha, factura.fecha) && Objects.equals(asesor, factura.asesor) && Objects.equals(listaProductos, factura.listaProductos);
+        return totalaPagar == factura.totalaPagar && Objects.equals(idFactura, factura.idFactura) && Objects.equals(cliente, factura.cliente) && Objects.equals(fecha, factura.fecha) && Objects.equals(asesor, factura.asesor) && Objects.equals(cantidadProducto, factura.cantidadProducto) && Objects.equals(nombreProducto, factura.nombreProducto) && Objects.equals(precio, factura.precio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idFactura, cliente, fecha, asesor, listaProductos, totalaPagar);
+        return Objects.hash(idFactura, cliente, fecha, asesor, cantidadProducto, nombreProducto, precio, totalaPagar);
     }
 
     @Override
@@ -103,7 +123,9 @@ public class Factura {
                 ", cliente=" + cliente +
                 ", fecha=" + fecha +
                 ", asesor='" + asesor + '\'' +
-                ", listaProductos=" + listaProductos +
+                ", cantidadProducto=" + cantidadProducto +
+                ", nombreProducto='" + nombreProducto + '\'' +
+                ", precio=" + precio +
                 ", totalaPagar=" + totalaPagar +
                 '}';
     }
