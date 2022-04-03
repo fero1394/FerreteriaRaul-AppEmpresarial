@@ -1,7 +1,10 @@
 package com.example.FerreteriaRaul.modelos;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Objects;
 
 @Document("productos")
 public class Producto {
@@ -13,9 +16,7 @@ public class Producto {
 
     private int precio;
 
-    public Producto() {
-
-    }
+    public Producto(){}
 
     public Producto(String idProducto, String nombreProducto, int precio) {
         this.idProducto = idProducto;
@@ -45,5 +46,27 @@ public class Producto {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "idProducto='" + idProducto + '\'' +
+                ", nombreProducto='" + nombreProducto + '\'' +
+                ", precio=" + precio +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Producto producto = (Producto) o;
+        return precio == producto.precio && Objects.equals(idProducto, producto.idProducto) && Objects.equals(nombreProducto, producto.nombreProducto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idProducto, nombreProducto, precio);
     }
 }

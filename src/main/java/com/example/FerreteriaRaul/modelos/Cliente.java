@@ -3,6 +3,7 @@ package com.example.FerreteriaRaul.modelos;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @Document("clientes")
@@ -57,5 +58,18 @@ public class Cliente {
                 ", cedula='" + cedula + '\'' +
                 ", celular='" + celular + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(idCliente, cliente.idCliente) && Objects.equals(nombre, cliente.nombre) && Objects.equals(cedula, cliente.cedula) && Objects.equals(celular, cliente.celular);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCliente, nombre, cedula, celular);
     }
 }

@@ -16,12 +16,6 @@ public class InventarioDTO {
 
     private Proveedor proveedor = inventario.getProveedor();
 
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    public void setProveedor(Proveedor proveedor) {this.proveedor = proveedor;
-    }
 
     public String getIdProducto() {
         return idProducto;
@@ -29,6 +23,21 @@ public class InventarioDTO {
 
     public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
+    }
+
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(Proveedor proveedor) {this.proveedor = proveedor;
+    }
+
+    public Inventario getInventario() {
+        return inventario;
+    }
+
+    public void setInventario(Inventario inventario) {
+        this.inventario = inventario;
     }
 
     public Producto getProducto() {

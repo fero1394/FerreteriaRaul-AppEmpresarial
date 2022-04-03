@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Document("facturas")
 public class Factura {
@@ -20,7 +21,9 @@ public class Factura {
 
     private String asesor;
 
-    private List<Producto> listaProductos;
+    //private List<String> listaProductos;
+
+    private String nombreProducto;
 
     private int totalaPagar;
 
@@ -32,20 +35,28 @@ public class Factura {
         this.fecha = LocalDate.now();
     }
 
+    public Integer getIdFactura() {
+        return idFactura;
+    }
+
+    public void setIdFactura(Integer idFactura) {
+        this.idFactura = idFactura;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     public LocalDate getFecha() {
         return fecha;
     }
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public int getIdFactura() {
-        return idFactura;
-    }
-
-    public void setIdFactura(int idFactura) {
-        this.idFactura = idFactura;
     }
 
     public String getAsesor() {
@@ -56,14 +67,6 @@ public class Factura {
         this.asesor = asesor;
     }
 
-    public List<Producto> getListaProductos() {
-        return listaProductos;
-    }
-
-    public void setListaProductos(List<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
-    }
-
     public int getTotalaPagar() {
         return totalaPagar;
     }
@@ -72,4 +75,36 @@ public class Factura {
         this.totalaPagar = totalaPagar;
     }
 
+    public List<String> getListaProductos() {
+        return listaProductos;
+    }
+
+    public void setListaProductos(List<String> listaProductos) {
+        this.listaProductos = listaProductos;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Factura factura = (Factura) o;
+        return totalaPagar == factura.totalaPagar && Objects.equals(idFactura, factura.idFactura) && Objects.equals(cliente, factura.cliente) && Objects.equals(fecha, factura.fecha) && Objects.equals(asesor, factura.asesor) && Objects.equals(listaProductos, factura.listaProductos);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idFactura, cliente, fecha, asesor, listaProductos, totalaPagar);
+    }
+
+    @Override
+    public String toString() {
+        return "Factura{" +
+                "idFactura=" + idFactura +
+                ", cliente=" + cliente +
+                ", fecha=" + fecha +
+                ", asesor='" + asesor + '\'' +
+                ", listaProductos=" + listaProductos +
+                ", totalaPagar=" + totalaPagar +
+                '}';
+    }
 }

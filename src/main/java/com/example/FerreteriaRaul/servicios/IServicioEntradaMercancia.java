@@ -17,4 +17,5 @@ public interface IServicioEntradaMercancia {
 
     Mono<EntradaMercancia> modificar(EntradaMercancia entradaMercancia);
 
+
 }

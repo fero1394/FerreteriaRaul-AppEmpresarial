@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Document("entradaMercancia")
 public class EntradaMercancia {
@@ -17,13 +18,21 @@ public class EntradaMercancia {
 
     private LocalDate fecha;
 
-    @DBRef
-    private Producto producto;
+    private  String nombreProducto;
 
+    private Integer cantidadProducto;
 
     public EntradaMercancia() {
         this.fecha = LocalDate.now();
 
+    }
+
+    public Integer getCantidadProducto() {
+        return cantidadProducto;
+    }
+
+    public void setCantidadProducto(Integer cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
 
     public Proveedor getProveedor() {
@@ -50,11 +59,35 @@ public class EntradaMercancia {
         this.fecha = fecha;
     }
 
-    public Producto getProducto() {
-        return producto;
+    public String getNombreProducto() {
+        return nombreProducto;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setNombreProducto(String nombreProducto) {
+        this.nombreProducto = nombreProducto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EntradaMercancia that = (EntradaMercancia) o;
+        return Objects.equals(idEntradaMercancia, that.idEntradaMercancia) && Objects.equals(proveedor, that.proveedor) && Objects.equals(fecha, that.fecha) && Objects.equals(nombreProducto, that.nombreProducto) && Objects.equals(cantidadProducto, that.cantidadProducto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idEntradaMercancia, proveedor, fecha, nombreProducto, cantidadProducto);
+    }
+
+    @Override
+    public String toString() {
+        return "EntradaMercancia{" +
+                "idEntradaMercancia='" + idEntradaMercancia + '\'' +
+                ", proveedor=" + proveedor +
+                ", fecha=" + fecha +
+                ", nombreProducto='" + nombreProducto + '\'' +
+                ", cantidadProducto=" + cantidadProducto +
+                '}';
     }
 }

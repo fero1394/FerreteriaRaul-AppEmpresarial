@@ -25,6 +25,7 @@ public class ServicioInventario implements IServicioInventario {
         return repositorioInventario.findAll();
     }
 
+
     @Override
     public Mono<Inventario> borrar(String id) {
         return repositorioInventario
@@ -33,8 +34,8 @@ public class ServicioInventario implements IServicioInventario {
     }
 
     @Override
-    public Flux<Inventario> buscarPorProducto(String producto) {
-        return repositorioInventario.findAllByProducto(producto);
+    public Flux<Inventario> buscarPorProducto(String Producto) {
+        return repositorioInventario.findAllByProducto(Producto);
     }
 
     @Override
