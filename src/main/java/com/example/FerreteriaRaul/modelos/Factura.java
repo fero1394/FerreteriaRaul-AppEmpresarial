@@ -36,6 +36,7 @@ public class Factura {
     public Factura() {
         idFactura = IdSiguiente;
         IdSiguiente++;
+
         this.fecha = LocalDate.now();
     }
 

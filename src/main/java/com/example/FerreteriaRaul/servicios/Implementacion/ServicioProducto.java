@@ -16,7 +16,7 @@ public class ServicioProducto implements IServicioProducto {
     private IProductoRepositorio iProductoRepositorio;
 
     @Override
-    public Mono<Producto> crearInventario(Producto producto) {
+    public Mono<Producto> crearProducto(Producto producto) {
         return iProductoRepositorio.save(producto);
     }
 

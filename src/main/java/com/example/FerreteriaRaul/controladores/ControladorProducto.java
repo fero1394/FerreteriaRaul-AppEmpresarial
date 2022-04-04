@@ -20,7 +20,7 @@ public class ControladorProducto {
     @PostMapping("/crear")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Producto> create(@RequestBody Producto producto){
-        return iServicioProducto.crearInventario(producto);
+        return iServicioProducto.crearProducto(producto);
     }
 
     @GetMapping("")

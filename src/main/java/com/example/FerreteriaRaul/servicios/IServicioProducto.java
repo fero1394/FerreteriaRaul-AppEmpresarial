@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 
 public interface IServicioProducto {
 
-    Mono<Producto> crearInventario(Producto producto);
+    Mono<Producto> crearProducto(Producto producto);
 
     Flux<Producto> mostrarTodos();
 
