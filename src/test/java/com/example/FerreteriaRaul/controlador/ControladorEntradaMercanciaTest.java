@@ -29,8 +29,8 @@ public class ControladorEntradaMercanciaTest {
     @Test
     void buscarPorNombreProducto() throws Exception {
 
-        var proveedor = new Proveedor("1","Carlos","00000","123456");
-        var entradaMercancia = new EntradaMercancia("20",proveedor, "pinza", 20);
+        Proveedor proveedor = new Proveedor("1","Carlos","00000","123456");
+        EntradaMercancia entradaMercancia = new EntradaMercancia("20",proveedor, "pinza", 20);
 
         Mono flujo = Mono.just(entradaMercancia);
 

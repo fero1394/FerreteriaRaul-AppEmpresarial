@@ -29,7 +29,7 @@ public class ControladorProductoTest {
     @Test
     void buscarPorNombreProducto() throws Exception {
 
-        var producto = new Producto("50","destornillador",10000);
+        Producto producto = new Producto("50","destornillador",10000);
 
         Flux flujo = Flux.just("50","destornillador",10000);
 

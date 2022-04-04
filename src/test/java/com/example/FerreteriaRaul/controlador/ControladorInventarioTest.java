@@ -27,9 +27,9 @@ public class ControladorInventarioTest {
     @Test
     void buscarPorNombreProducto() throws Exception {
 
-        var proveedor = new Proveedor("1","Carlos","00000","123456");
-        var producto = new Producto("50","destornillador",10000);
-        var inventario = new Inventario(producto,5,proveedor);
+        Proveedor proveedor = new Proveedor("1","Carlos","00000","123456");
+        Producto producto = new Producto("50","destornillador",10000);
+        Inventario inventario = new Inventario(producto,5,proveedor);
 
         Flux flujo = Flux.just(producto,5,proveedor);
 

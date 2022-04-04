@@ -19,7 +19,7 @@ public class ControladorClienteTest {
     @Test
     void buscarPorNombre() throws Exception {
 
-        var cliente = new Cliente("1","Carlos","00000","123456");
+        Cliente cliente = new Cliente("1","Carlos","00000","123456");
 
         Flux flujo = Flux.just(cliente);
 

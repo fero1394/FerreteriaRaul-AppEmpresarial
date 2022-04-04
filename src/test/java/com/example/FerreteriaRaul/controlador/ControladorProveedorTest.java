@@ -26,7 +26,7 @@ public class ControladorProveedorTest {
     @Test
     void buscarPorNombre()throws Exception {
 
-        var proveedor = new Proveedor("1","Carlos","00000","123456");
+        Proveedor proveedor = new Proveedor("1","Carlos","00000","123456");
 
         Flux flujo = Flux.just("1","Carlos","00000","123456");
 
