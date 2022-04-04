@@ -37,7 +37,7 @@ public class ControladorEntradaMercancia {
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
-    @GetMapping("/buscarpornombre/{id}")
+    @GetMapping("/buscarporid/{id}")
     private Mono<EntradaMercancia> findAllByid(@PathVariable("id")String id){
         return iServicioEntradaMercancia.buscarPorId(id);
     }

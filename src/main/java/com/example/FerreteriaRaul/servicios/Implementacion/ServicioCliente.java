@@ -2,7 +2,6 @@ package com.example.FerreteriaRaul.servicios.Implementacion;
 
 import com.example.FerreteriaRaul.modelos.Cliente;
 import com.example.FerreteriaRaul.repositorios.IClienteRepositorio;
-import com.example.FerreteriaRaul.repositorios.IinventarioRepositorio;
 import com.example.FerreteriaRaul.servicios.IServicioCliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

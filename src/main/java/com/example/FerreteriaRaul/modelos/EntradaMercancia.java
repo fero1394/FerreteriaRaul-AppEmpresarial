@@ -27,6 +27,14 @@ public class EntradaMercancia {
 
     }
 
+    public EntradaMercancia(String idEntradaMercancia, Proveedor proveedor, String nombreProducto, Integer cantidadProducto) {
+        this.idEntradaMercancia = idEntradaMercancia;
+        this.proveedor = proveedor;
+        this.nombreProducto = nombreProducto;
+        this.cantidadProducto = cantidadProducto;
+        this.fecha = LocalDate.now();
+    }
+
     public Integer getCantidadProducto() {
         return cantidadProducto;
     }

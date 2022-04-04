@@ -18,6 +18,14 @@ public class Cliente {
 
     private String celular;
 
+    public Cliente(){}
+    public Cliente(String idCliente, String nombre, String cedula, String celular) {
+        this.idCliente = idCliente;
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.celular = celular;
+    }
+
     public String getIdCliente() {
         return idCliente;
     }
