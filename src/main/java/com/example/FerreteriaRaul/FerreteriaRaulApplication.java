@@ -82,7 +82,7 @@ public class FerreteriaRaulApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		flux();
+		//flux();
 
 	}
 }
